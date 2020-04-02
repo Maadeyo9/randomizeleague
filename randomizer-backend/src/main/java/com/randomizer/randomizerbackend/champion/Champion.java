@@ -11,6 +11,15 @@ public class Champion {
 
     private String championName;
     private String championTitle;
+    private String championImage;
+
+    public String getChampionImage() {
+        return championImage;
+    }
+
+    public void setChampionImage(String championImage) {
+        this.championImage = championImage;
+    }
 
     public Integer getId() {
         return id;
