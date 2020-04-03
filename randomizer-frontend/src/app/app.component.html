@@ -1,5 +1,10 @@
 <h1>Randomizer</h1>
-<app-champion [champion]="champion"></app-champion>
+<h2>{{champion.championName}}</h2>
+<h3>{{champion.championTitle}}</h3>
+<img [src]="'assets/images/Champit/'+champion.championImage">
+<div *ngFor="let item of items">
+  {{item.itemName}}
+</div>
 
 
-<button (click)="getRandomChampion()">Get Random Pog</button>
+<button type="button" class="btn btn-dark" (click)="getRandomChampion()">Get Random Pog</button>

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Champion} from "./champion";
-import {ChampionService} from "./champion.service";
+import {BuildService} from "./build.service";
+import {Item} from "./item";
+import {Summonerspell} from "./summonerspell";
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,11 @@ import {ChampionService} from "./champion.service";
 })
 export class AppComponent implements OnInit{
   public champion : Champion;
+  public items : Item[];
+  public summonerspells : Summonerspell[];
 
   constructor(
-    private championService : ChampionService
+    private buildService : BuildService
   ) {}
 
   ngOnInit(): void {
@@ -19,8 +23,10 @@ export class AppComponent implements OnInit{
   }
 
   public getRandomChampion(){
-    this.championService.getRandomChampion().subscribe((champion) =>{
-      this.champion = champion;
+    this.buildService.getRandomBuild().subscribe((build) =>{
+      this.champion = build.champion;
+      this.items = build.items;
+      this.summonerspells = build.summonerspells;
     });
   }
 }

@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Champion} from "./champion";
 import {Observable} from "rxjs";
+import {Build} from "./build";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChampionService {
+export class BuildService {
 
   constructor(
     private http : HttpClient
   ) { }
-  public getRandomChampion(): Observable<Champion>{
-    return this.http.get<Champion>("/api/champions/random-champion");
+
+  public getRandomBuild(): Observable<Build>{
+    return this.http.get<Build>("/api/builds/random-build");
   }
 }
