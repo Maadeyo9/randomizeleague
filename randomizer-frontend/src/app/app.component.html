@@ -5,6 +5,9 @@
 <div *ngFor="let item of items">
   {{item.itemName}}
 </div>
-
+<h3>Summoner Spells</h3>
+<div *ngFor="let spell of summonerspells">
+  {{spell.spellName}}
+</div>
 
 <button type="button" class="btn btn-dark" (click)="getRandomChampion()">Get Random Pog</button>

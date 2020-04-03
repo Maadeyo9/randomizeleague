@@ -10,7 +10,7 @@ public class Build {
 
     private Champion champion;
     private List<Item> items;
-    private List<Summonerspell> summonerspell;
+    private List<Summonerspell> summonerspells;
 
 
     public Champion getChampion() {
@@ -29,5 +29,11 @@ public class Build {
         this.items = items;
     }
 
+    public List<Summonerspell> getSummonerspells() {
+        return summonerspells;
+    }
 
+    public void setSummonerspells(List<Summonerspell> summonerspells) {
+        this.summonerspells = summonerspells;
+    }
 }
