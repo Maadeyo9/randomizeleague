@@ -9,15 +9,17 @@
       </tr>
     </thead>
     <tbody>
+    <tr>
       <td>
-        <img class="championimageslot mx-auto d-block"[src]="'assets/images/Champit/'+champion.championImage"><br>
+        <img class="championimageslot mx-auto d-block" [src]="'assets/images/Champit/'+champion.championImage">
         <h3>{{champion.championName}}, {{champion.championTitle}}</h3>
       </td>
 
       <td>
         <div class="row">
           <div class="items mx-auto d-block" *ngFor="let item of items">
-            <img class="itempic" [src]="'assets/images/Itemit/' + item.itemImage">
+            <img class="itempic" placement="top" ngbTooltip="{{item.itemName}}" [src]="'assets/images/Itemit/' + item.itemImage"
+                 alt="Image not found.">
           </div>
         </div>
       </td>
@@ -25,11 +27,13 @@
       <td>
         <div class="row">
           <div class="summonerspellslot mx-auto d-block" *ngFor="let spell of summonerspells">
-            <img class="summonerspellslot" [src]="'assets/images/SummSpells/' + spell.spellImage">
+            <img class="summonerspellslot" [src]="'assets/images/SummSpells/' + spell.spellImage"
+                 alt="Image not found.">
             <h5>{{spell.spellName}}</h5>
           </div>
         </div>
       </td>
+    </tr>
     </tbody>
   </table>
 <button type="button" class="btn btn-dark mx-auto d-block" (click)="getRandomChampion()">Get A Random Build</button>
