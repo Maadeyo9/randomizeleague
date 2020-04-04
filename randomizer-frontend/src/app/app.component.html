@@ -1,13 +1,21 @@
+<div class="container-fluid">
 <h1>Randomizer</h1>
 <h2>{{champion.championName}}</h2>
 <h3>{{champion.championTitle}}</h3>
-<img [src]="'assets/images/Champit/'+champion.championImage">
-<div *ngFor="let item of items">
-  {{item.itemName}}
-</div>
+<img class="championimageslot"[src]="'assets/images/Champit/'+champion.championImage">
+  <h3>Item build</h3>
+  <div class="row col-6">
+    <div class="items" *ngFor="let item of items">
+      <img class="itempic" [src]="'assets/images/Itemit/' + item.itemImage">
+    </div>
+  </div>
+
 <h3>Summoner Spells</h3>
-<div *ngFor="let spell of summonerspells">
-  {{spell.spellName}}
-</div>
+  <div class="row col-2">
+    <div class *ngFor="let spell of summonerspells">
+      <img class="summonerspellslot" [src]="'assets/images/SummSpells/' + spell.spellImage">
+    </div>
+  </div>
 
 <button type="button" class="btn btn-dark" (click)="getRandomChampion()">Get Random Pog</button>
+</div>
