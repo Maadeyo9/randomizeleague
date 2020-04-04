@@ -1,21 +1,36 @@
-<div class="container-fluid">
-<h1>Randomizer</h1>
-<h2>{{champion.championName}}</h2>
-<h3>{{champion.championTitle}}</h3>
-<img class="championimageslot"[src]="'assets/images/Champit/'+champion.championImage">
-  <h3>Item build</h3>
-  <div class="row col-6">
-    <div class="items" *ngFor="let item of items">
-      <img class="itempic" [src]="'assets/images/Itemit/' + item.itemImage">
-    </div>
-  </div>
+<div class="container">
+<h1>League of Randomizer</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Champion</th>
+        <th scope="col">Items</th>
+        <th scope="col">Summoner Spells</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <img class="championimageslot mx-auto d-block"[src]="'assets/images/Champit/'+champion.championImage"><br>
+        <h3>{{champion.championName}}, {{champion.championTitle}}</h3>
+      </td>
 
-<h3>Summoner Spells</h3>
-  <div class="row col-2">
-    <div class *ngFor="let spell of summonerspells">
-      <img class="summonerspellslot" [src]="'assets/images/SummSpells/' + spell.spellImage">
-    </div>
-  </div>
+      <td>
+        <div class="row">
+          <div class="items mx-auto d-block" *ngFor="let item of items">
+            <img class="itempic" [src]="'assets/images/Itemit/' + item.itemImage">
+          </div>
+        </div>
+      </td>
 
-<button type="button" class="btn btn-dark" (click)="getRandomChampion()">Get Random Pog</button>
+      <td>
+        <div class="row">
+          <div class="summonerspellslot mx-auto d-block" *ngFor="let spell of summonerspells">
+            <img class="summonerspellslot" [src]="'assets/images/SummSpells/' + spell.spellImage">
+            <h5>{{spell.spellName}}</h5>
+          </div>
+        </div>
+      </td>
+    </tbody>
+  </table>
+<button type="button" class="btn btn-dark mx-auto d-block" (click)="getRandomChampion()">Get A Random Build</button>
 </div>
